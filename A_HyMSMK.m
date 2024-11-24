@@ -194,8 +194,8 @@ function [Ranks, ord ]= getRankingOfScoreList(   ScoreList, sorttype, OP_Identic
                             n_thisscore = nnz( idx )   ;
                             if n_thisscore>1
                                 if strcmpi(OP_IdenticalValues, 'MeanRank') 
-                                    % Ranks( idx,   d2,d3,d4 ) = mean(Ranks(idx,   d2,d3,d4), 1);  %¶ÔÓÚÏàÍ¬·ÖÖµµÄÔªËØ¸³ÓèÏàÍ¬µÄËùÓĞranksµÄ¾ùÖµ
-                                    rank_t( idx ) = mean(rank_t(idx), 1);  %¶ÔÓÚÏàÍ¬·ÖÖµµÄÔªËØ¸³ÓèÏàÍ¬µÄËùÓĞranksµÄ¾ùÖµ
+                                    % Ranks( idx,   d2,d3,d4 ) = mean(Ranks(idx,   d2,d3,d4), 1);  %å¯¹äºç›¸åŒåˆ†å€¼çš„å…ƒç´ èµ‹äºˆç›¸åŒçš„æ‰€æœ‰ranksçš„å‡å€¼
+                                    rank_t( idx ) = mean(rank_t(idx), 1);  %å¯¹äºç›¸åŒåˆ†å€¼çš„å…ƒç´ èµ‹äºˆç›¸åŒçš„æ‰€æœ‰ranksçš„å‡å€¼
                                     % % sum( labels_ord( idx ) )/nnz( idx )
                                 elseif strcmpi(OP_IdenticalValues, 'RandPermutation') 
                                     ind = find(idx); 
@@ -392,7 +392,7 @@ function [P_G, P_D, Pt ] = HNetRandWalk(AdjGfG,AdjGfD,AdjDfD, P0_G,P0_D, restart
 % Pt: stable probabilities in Gene+disease network 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % NetRandWalk
 % random walk with restart algorithm in heterogeneous network. 
-% Reference: Yongjin Li, Jagdish C. Patra, Genome-wide inferring gene¨Cphenotype relationship 
+% Reference: Yongjin Li, Jagdish C. Patra, Genome-wide inferring geneâ€“phenotype relationship 
 % by walking on the heterogeneous network, Bioinformatics, 2010, 26: 1219-1224.  
     
     if ~exist('pro_jump','var') || isempty (pro_jump)
@@ -481,7 +481,7 @@ function [ combMatrix , IsNormalized ] = getNormalizedMatrix_Heter(AdjGfG,AdjGfD
             combMatrix = [ (1-pro_jump).*AdjGfG, pro_jump.*AdjGfD; pro_jump.*AdjGfD', (1-pro_jump).*AdjDfD    ] ;
             IsNormalized = false;
             
-        case lower( {'col','ProbabilityNormalizationColumn','NormalizationColumn', 'Column'} )   %¸ÅÂÊ½âÊÍ  £¬È·±£ÁĞºÍÎª1 
+        case lower( {'col','ProbabilityNormalizationColumn','NormalizationColumn', 'Column'} )   %æ¦‚ç‡è§£é‡Š  ï¼Œç¡®ä¿åˆ—å’Œä¸º1 
             idxDis_WithDiseaseGene =  sum( AdjGfD, 1)~=0;   % mark diseases with disease-genes
             idxGene_WithDisease    = (sum( AdjGfD, 2)~=0)';   % mark genes that are associated with diseases
             % WAdj = getNormalizedMatrix(Adj, NormalizationType, SetIsolatedNodeSelfLoop )
