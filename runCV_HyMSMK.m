@@ -1,4 +1,4 @@
-%     dataname = 'Dataset_HumanPPI_MencheScience2015_OMIM_HPOSim_meshDis_SymptomSim_DisGene' ;
+%     dataname = 'Dataset_HumanPPI_MencheScience2015_OMIM_HPOSim_meshDis_SymptomSim_DisGene' ;  
 % location for data & Results' 
 datadir    = 'data';    
 ResPerfDir = 'results'; if ~exist(ResPerfDir,'dir');mkdir(ResPerfDir); end
