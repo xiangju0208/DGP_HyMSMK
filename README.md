@@ -9,7 +9,5 @@ Matlab 2016 or above.
 
 ## Cite
 If you use HyMSMK in your research, please cite: <br> 
-Ju Xiang, et al. Integrate multiscale module kernel for disease-gene discovery in biological networks (doi: https://doi.org/10.1101/2022.07.28.501869). 
+Integrate multiscale module kernel for disease-gene discovery in biological networks (doi: https://doi.org/10.1101/2022.07.28.501869). 
 
-## Contact<br>
-Email: xiang.ju@foxmail.com 
