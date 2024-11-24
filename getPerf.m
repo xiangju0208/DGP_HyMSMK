@@ -5,7 +5,7 @@ function  [AUROCset, AUPRCset , Rec5set  , Prec5set,n_method, methodnames] = get
     methodnames = TableScores.Properties.VariableNames ; 
     [n_gene,n_method ] = size(TableScores) ;   %   
     XVals = [0:0.001:1]; n_XVals = length(XVals);
-    AUROCset    = 0.5.*ones( 1, n_method    ); 
+    AUROCset    = 0.5.*ones( 1, n_method    );  
     AUPRCset    = 0.0.*ones( 1, n_method    ); 
     AURecallset = 0.0.*ones( 1, n_method    );
     AUPrecset   = 0.0.*ones( 1, n_method    );
